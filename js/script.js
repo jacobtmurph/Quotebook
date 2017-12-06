@@ -5,14 +5,14 @@ quotes = [
     source: "Niccolò Machiavelli",
     citation: "Discourses on Livy",
     year: 1531,
-    categories: ["Wise", "European", "Books", "Innovation"]
+    tags: ["Wise", "European", "Books", "Innovation"]
   },
   {
     quote: "What, you egg?",
     source: "Shakespeare",
     citation: "MacBeth",
     year: 1606,
-    categories: ["Random", "Funny", "Weird", "Theater"],
+    tags: ["Random", "Funny", "Weird", "Theater"],
   },
   {
     quote: `Barry: 'What's your super power again?'
@@ -20,22 +20,22 @@ quotes = [
     source: "The Flash & Batman",
     citation: "Justice League",
     year: 2017,
-    categories: ["Movie Culture", "Funny", "Batman", "Superheroes"],
+    tags: ["Movie Culture", "Funny", "Batman", "Superheroes"],
     },
   {
     quote: "Raise the sail with your stronger hand.",
     source: "Japanese Proverb",
-    categories: ["Strength", "Life", "Wise", "Orientel"]
+    tags: ["Strength", "Life", "Wise", "Orientel"]
   },
   {
     quote: "With great power comes great responsibility.",
     source: "Uncle Ben",
-    categories: ["Movie Culture", "Sad", "SpiderMan", "Superheroes", "Over used"],
+    tags: ["Movie Culture", "Sad", "SpiderMan", "Superheroes", "Over Used"],
   },
   {
     quote: "Education is what remains after one has forgotten what one learned in school.",
     source: "Albert Einstein",
-    categories: ["Keep Learning", "Education", "School", "Wise"]
+    tags: ["Keep Learning", "Education", "School", "Wise"]
   }
 ];
 
@@ -73,6 +73,8 @@ function printQuote() {
     ${quote.citation ? `<span class="citation">${quote.citation}</span>` : ""}
     ${quote.year ? `<span class="year">${quote.year}</span>` : ""}
   </p>
+  <br>
+  <p class="tags">Tags: ${quote.tags.toString()}</p>
   `;
 
   //change background color & quote
@@ -80,7 +82,8 @@ function printQuote() {
   document.getElementById('quote-box').innerHTML = output;
 }
 
-//Automatically changes quote after 10 seconds:
+//Automatically prints first quote, then changes quote after 10 seconds:
+printQuote()
 window.setInterval(printQuote, 10000);
 
 
