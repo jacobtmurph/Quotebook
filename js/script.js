@@ -1,5 +1,5 @@
 //Array containing an object with the info needed for each quote.
-quotes = [
+var quotes = [
   {
     quote: "...The jealous temper of mankind...has constantly made pursuit of new methods and systems no less perilous than the search after unknown land and seas;",
     source: "Niccolò Machiavelli",
@@ -44,7 +44,7 @@ backgroundColors = ["slategrey", "blue", "crimson", "#36b55c"];
 
 //Changes the background color
 function changeBackground(colors) {
-  color = Math.floor(Math.random() * (colors.length - 0 + 1));
+  var color = Math.floor(Math.random() * (colors.length - 0 + 1));
   document.body.style.backgroundColor = colors[color];
 
   //Aditionally changes button bakground color.
@@ -54,7 +54,7 @@ function changeBackground(colors) {
 //Function to generate random quotes
 function getRandomQuote(quote_array) {
   //Prints a Random number between 0 and the length of the quotes array
-  quote_index = Math.floor(Math.random() * (quotes.length - 0 + 1));
+  var quote_index = Math.floor(Math.random() * (quotes.length - 0 + 1));
   return quotes[quote_index];
 }
 
@@ -66,8 +66,8 @@ function getRandomQuote(quote_array) {
   Otherwise, they are omitted.
  */
 function printQuote() {
-  quote = getRandomQuote(quotes);
-  output = `
+  var quote = getRandomQuote(quotes);
+  var output = `
   <p class="quote"> ${quote.quote} </p>
   <p class="source"> ${quote.source}
     ${quote.citation ? `<span class="citation">${quote.citation}</span>` : ""}
